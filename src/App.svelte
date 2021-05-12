@@ -1,12 +1,20 @@
 <script>
-	import { Button } from 'ui-components'
+	import { Button, Card, Badge, StaticChip } from 'ui-components'
 </script>
 
 <main>
 	<h1>Hello !</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p class='uppercase fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 
-	<Button>imported button</Button>
+	<Button raised>imported button</Button>
+
+	<Card>This is a card</Card>
+
+	<br/>
+
+	<Badge color="blue">M</Badge>
+
+	<StaticChip>topic</StaticChip>
 </main>
 
 <style>
