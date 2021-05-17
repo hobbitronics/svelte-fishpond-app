@@ -1,65 +1,48 @@
 <script>
-import '../node_modules/filepond/dist/filepond.min.css'
-import FilePond, { registerPlugin, supported } from 'svelte-filepond';
+	import { Button, Card, Badge, StaticChip, CustomCard, Form, Page, TextField } from 'ui-components'
 
-// Import the Image EXIF Orientation and Image Preview plugins
-// Note: These need to be installed separately
-// `npm i filepond-plugin-image-preview filepond-plugin-image-exif-orientation --save`
-import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
+	let text
 
-// Register the plugins
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
+	let topics = ['topic1', 'topic2']
+</script>
 
-// a reference to the component, used to call FilePond methods
-let pond;
 
-// pond.getFiles() will return the active files
-
-// the name to use for the internal file input
-let name = 'filepond';
-
-// handle filepond events
-function handleInit() {
-	console.log('FilePond has initialised');
-}
-
-function handleAddFile(err, fileItem) {
-	console.log('A file has been added', fileItem);
-}</script>
-
-<main>
-	<h1>Hello !</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<div class="app">
-
-		<FilePond bind:this={pond} {name}
-			server="/api"
-			allowMultiple={true}
-			oninit={handleInit}
-			onaddfile={handleAddFile}/>
-		
+<Page title="test" layout="grid" >
+	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+		<Page.Subheader>This is a template for ui-components</Page.Subheader>
+	
+		<p class='fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	</div>
-</main>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+		
+		<Card>
+			<p class="align-center">This is a card</p>
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+			<Badge color="green">M</Badge>
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+			<div class="flex justify-center flex-wrap">
+				{#each topics as topic}
+					<StaticChip>{topic}</StaticChip>
+				{/each}
+			</div>
+
+			<Form>
+				Form
+				<TextField placeholder='Textfield' bind:value={text} />
+			</Form>
+			
+			<span slot="actions">
+				<Button raised on:click={() => topics = [...topics, text]}>imported button</Button>
+			</span>
+		</Card>
+
+	</div>
+		
+	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+		<CustomCard buttons={[{label: 'go to ui-components', url: "https://github.com/silinternational/ui-components#readme"}]} icon="face" title='Title goes here' alt='graphic' src="">
+			Add some text content here.
+		</CustomCard>
+	</div>
+		
+	</Page>
