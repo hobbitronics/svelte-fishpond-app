@@ -5,11 +5,12 @@
 
 <Page title="test" layout="grid" >
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-		<Page.Subheader>This is a testing app for ui-components</Page.Subheader>
+		<Page.Subheader>This is a template for ui-components</Page.Subheader>
+	
+		<p class='fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	</div>
 
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
-		<p class='fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 		
 		<Card>
 			<p class="align-center">This is a card</p>
