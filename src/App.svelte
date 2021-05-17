@@ -35,8 +35,8 @@
 	</div>
 		
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
-		<CustomCard buttons={[{label: 'go to ui-components', url: "https://github.com/silinternational/ui-components#readme"}]} icon="face" title='Who are you?' alt='avatar' src="">
-			Say more about yourself to help your customers get to know you.
+		<CustomCard buttons={[{label: 'go to ui-components', url: "https://github.com/silinternational/ui-components#readme"}]} icon="face" title='Title goes here' alt='graphic' src="">
+			Add some text content here.
 		</CustomCard>
 	</div>
 		
