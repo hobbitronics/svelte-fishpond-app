@@ -1,5 +1,9 @@
 <script>
-	import { Button, Card, Badge, StaticChip, CustomCard, Form, Page } from 'ui-components'
+	import { Button, Card, Badge, StaticChip, CustomCard, Form, Page, TextField } from 'ui-components'
+
+	let text
+
+	let topics = ['topic1', 'topic2']
 </script>
 
 
@@ -18,18 +22,18 @@
 			<Badge color="green">M</Badge>
 
 			<div class="flex justify-center flex-wrap">
-				<StaticChip>topic</StaticChip>
-				<StaticChip>topic1</StaticChip>
-				<StaticChip>topic2</StaticChip>
+				{#each topics as topic}
+					<StaticChip>{topic}</StaticChip>
+				{/each}
 			</div>
 
 			<Form>
 				Form
-				<input type="text"/>
+				<TextField placeholder='Textfield' bind:value={text} />
 			</Form>
 			
 			<span slot="actions">
-				<Button raised>imported button</Button>
+				<Button raised on:click={() => topics = [...topics, text]}>imported button</Button>
 			</span>
 		</Card>
 
