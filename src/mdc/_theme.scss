@@ -1,0 +1,18 @@
+// https://material.io/develop/web/docs/theming
+@use '@material/theme';
+@include theme.core-styles;
+
+:root {
+  --mdc-theme-primary: #b400e1;
+  --mdc-theme-primary-variant: #af00af;
+  --mdc-theme-secondary: #56cfbf;
+  --mdc-theme-error: #C30000;
+  --sil-gray: #666666;
+  --sil-green: #509E2F;
+  --sil-off-black: #2A3032;
+  --sil-primary-blue: #265532;
+}
+
+.mdc-theme--primary-variant {
+  color: var(--mdc-theme-primary-variant);
+}
