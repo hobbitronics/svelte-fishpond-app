@@ -1,40 +1,43 @@
 <script>
-	import { Button, Card, Badge, StaticChip } from 'ui-components'
+	import { Button, Card, Badge, StaticChip, CustomCard, Form, Page } from 'ui-components'
 </script>
 
-<main>
-	<h1>Hello !</h1>
-	<p class='uppercase fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 
-	<Button raised>imported button</Button>
+<Page title="test" layout="grid" >
+	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+		<Page.Subheader>This is a testing app for ui-components</Page.Subheader>
+	</div>
 
-	<Card>This is a card</Card>
+	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+		<p class='fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+		
+		<Card>
+			<p class="align-center">This is a card</p>
 
-	<br/>
+			<Badge color="green">M</Badge>
 
-	<Badge color="blue">M</Badge>
+			<div class="flex justify-center flex-wrap">
+				<StaticChip>topic</StaticChip>
+				<StaticChip>topic1</StaticChip>
+				<StaticChip>topic2</StaticChip>
+			</div>
 
-	<StaticChip>topic</StaticChip>
-</main>
+			<Form>
+				Form
+				<input type="text"/>
+			</Form>
+			
+			<span slot="actions">
+				<Button raised>imported button</Button>
+			</span>
+		</Card>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+	</div>
+		
+	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+		<CustomCard buttons={[{label: 'go to ui-components', url: "https://github.com/silinternational/ui-components#readme"}]} icon="face" title='Who are you?' alt='avatar' src="">
+			Say more about yourself to help your customers get to know you.
+		</CustomCard>
+	</div>
+		
+	</Page>
