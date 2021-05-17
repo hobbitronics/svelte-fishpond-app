@@ -1,4 +1,5 @@
 <script>
+	import './components/mdc/_index.scss'
 	import { Button, Card, Badge, StaticChip, CustomCard, Form, Page, TextField } from 'ui-components'
 
 	let text
