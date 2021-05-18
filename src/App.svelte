@@ -30,7 +30,7 @@
 
 			<Form>
 				Form
-				<TextField placeholder='Textfield' bind:value={text} />
+				<TextField label={'Textfield'} bind:value={text} />
 			</Form>
 			
 			<span slot="actions">
