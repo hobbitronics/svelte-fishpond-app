@@ -1,13 +1,15 @@
 <script>
 	import './mdc/_index.scss'
-	import { actions, Button, Card, Checkbox, Badge, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from '@silintl/ui-components'
+	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from 'ui-components'
 	import { onMount } from 'svelte'
 
 	let text
 	let topics = ['topic1', 'topic2']
 	let checked = true
+	let appName = 'Demo App'
 
 	onMount(() => {
+		//actions are for TopAppBar which Drawer uses.
 		$actions = [
 			{
 				icon: 'info_outline',
@@ -16,9 +18,14 @@
 			},
 		]
 	})
+
+	const clickHandler = () => {
+		topics = [...topics, text]
+		setNotice('You added a topic!')
+	}
 </script>
 
-<TopAppBar>Demo App</TopAppBar>
+<TopAppBar>{appName}</TopAppBar>
 
 <Page title="test page" layout="grid" >
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
@@ -46,7 +53,7 @@
 			</Form>
 			
 			<span slot="actions">
-				<Button raised on:click={() => topics = [...topics, text]}>imported button</Button>
+				<Button raised on:click={clickHandler}>imported button</Button>
 				<Checkbox label='check this out' bind:checked={checked} uppercase/>
 			</span>
 		</Card>
@@ -60,3 +67,5 @@
 	</div>
 		
 	</Page>
+
+	<Snackbar/>
