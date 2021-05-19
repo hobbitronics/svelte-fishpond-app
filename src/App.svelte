@@ -14,7 +14,7 @@
 			{
 				icon: 'info_outline',
 				label: 'action demo',
-				onClick: () => alert('you clicked an action'),
+				onClick: () => setNotice('you clicked an action'),
 			},
 		]
 	})
@@ -23,9 +23,11 @@
 		topics = [...topics, text]
 		setNotice('You added a topic!')
 	}
+
+	const openMenu = () => setNotice("there isn't a menu yet")
 </script>
 
-<TopAppBar>{appName}</TopAppBar>
+<TopAppBar on:nav={openMenu}>{appName}</TopAppBar>
 
 <Page title="test page" layout="grid" >
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
