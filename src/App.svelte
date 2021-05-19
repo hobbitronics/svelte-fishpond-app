@@ -1,10 +1,11 @@
 <script>
 	import './mdc/_index.scss'
-	import { actions, Button, Card, Badge, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from '@silintl/ui-components'
+	import { actions, Button, Card, Checkbox, Badge, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from '@silintl/ui-components'
 	import { onMount } from 'svelte'
 
 	let text
 	let topics = ['topic1', 'topic2']
+	let checked = true
 
 	onMount(() => {
 		$actions = [
@@ -46,6 +47,7 @@
 			
 			<span slot="actions">
 				<Button raised on:click={() => topics = [...topics, text]}>imported button</Button>
+				<Checkbox label='check this out' bind:checked={checked} uppercase/>
 			</span>
 		</Card>
 
