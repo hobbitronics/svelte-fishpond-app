@@ -1,14 +1,25 @@
 <script>
 	import './mdc/_index.scss'
-	import { Button, Card, Badge, StaticChip, CustomCard, Form, Page, TextField } from '@silintl/ui-components'
+	import { actions, Button, Card, Badge, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from '@silintl/ui-components'
+	import { onMount } from 'svelte'
 
 	let text
-
 	let topics = ['topic1', 'topic2']
+
+	onMount(() => {
+		$actions = [
+			{
+				icon: 'info_outline',
+				label: 'action demo',
+				onClick: () => alert('you clicked an action'),
+			},
+		]
+	})
 </script>
 
+<TopAppBar>Demo App</TopAppBar>
 
-<Page title="test" layout="grid" >
+<Page title="test page" layout="grid" >
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 		<Page.Subheader>This is a template for ui-components</Page.Subheader>
 	
