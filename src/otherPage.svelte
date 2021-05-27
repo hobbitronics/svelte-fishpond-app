@@ -1,0 +1,55 @@
+<script>
+  import { actions, Drawer, Page } from 'ui-components'
+  import { onMount } from "svelte"
+
+  $: menuItems = [      
+    {},
+    {
+      url: './',
+      label: 'see our components in storybook'
+    },
+    {
+      label: '--break--',
+    },
+    {
+      url: './',
+      label: 'see our components in storybook'
+    },
+    {
+      url: './',
+      label: 'see our components in storybook'
+    },
+    {
+      label: '--break--',
+    },
+    {
+      url: './',
+      label: 'see our components in storybook'
+    }
+  ]
+
+  onMount(() => {
+    //actions are for TopAppBar which Drawer uses as a child.
+    $actions = [
+      {
+        icon: 'info_outline',
+        label: 'action demo',
+        onClick: () => alert('you clicked an action'),
+      }
+    ]
+  })
+</script>
+
+<Drawer {menuItems} title="app">
+  <span class="pointer" slot="header">
+    <img class="w-100" src="/logo.png" alt="logo">
+  </span>
+
+  <Page title="title" layout="grid">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+      <p>
+        Here is where you put your page content.
+      </p>
+    </div>
+  </Page>
+</Drawer>
