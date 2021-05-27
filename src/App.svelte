@@ -1,6 +1,6 @@
 <script>
 	import './mdc/_index.scss'
-	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from 'ui-components'
+	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from '@silintl/ui-components'
 	import { onMount } from 'svelte'
 
 	let text
