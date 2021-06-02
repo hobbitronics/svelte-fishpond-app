@@ -33,7 +33,7 @@
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 		<Page.Subheader>This is a template for ui-components</Page.Subheader>
 		
-		<Progress.Linear indeterminate barColorProvided/>
+		<Progress.Linear indeterminate/>
 	
 		<p class='fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	</div>
