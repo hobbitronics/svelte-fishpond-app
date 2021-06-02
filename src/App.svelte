@@ -1,6 +1,6 @@
 <script>
 	import './mdc/_index.scss'
-	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from 'ui-components'
+	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar, Progress } from '@silintl/ui-components'
 	import { onMount } from 'svelte'
 
 	let text
@@ -32,6 +32,8 @@
 <Page title="test page" layout="grid" >
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 		<Page.Subheader>This is a template for ui-components</Page.Subheader>
+		
+		<Progress.Linear indeterminate barColorProvided/>
 	
 		<p class='fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	</div>
