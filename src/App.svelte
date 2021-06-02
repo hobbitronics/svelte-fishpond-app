@@ -1,6 +1,6 @@
 <script>
 	import './mdc/_index.scss'
-	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from '@silintl/ui-components'
+	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar } from 'ui-components'
 	import { onMount } from 'svelte'
 
 	let text
@@ -39,7 +39,7 @@
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
 		
 		<Card>
-			<p class="align-center">This is a card</p>
+			<p class="text-align-center">This is a card</p>
 
 			<Badge color="green">M</Badge>
 
