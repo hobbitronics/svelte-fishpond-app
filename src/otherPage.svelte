@@ -1,6 +1,8 @@
 <script>
-  import { actions, Drawer, Page } from 'ui-components'
+  import { actions, Drawer, Page, Button } from 'ui-components'
   import { onMount } from "svelte"
+
+  export let toggle = true
 
   $: menuItems = [      
     {},
@@ -41,11 +43,12 @@
 </script>
 
 <body>
-  <Drawer {menuItems} title="app">
+  <Drawer {menuItems} bind:toggle={toggle} dismissible title="app">
     <span class="pointer" slot="header">
       <img class="w-100" src="/logo.png" alt="logo">
+      <Button on:click={() => toggle = !toggle}>Toggle drawer</Button>
     </span>
-    
+
     <Page title="title">
       <slot/>
     </Page>
