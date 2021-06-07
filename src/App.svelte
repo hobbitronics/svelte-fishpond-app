@@ -2,6 +2,7 @@
 	import './mdc/_index.scss'
 	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar, Progress } from '@silintl/ui-components'
 	import { onMount } from 'svelte'
+	import OtherPage from './otherPage.svelte'
 
 	let text
 	let topics = ['topic1', 'topic2']
@@ -27,13 +28,14 @@
 	const openMenu = () => setNotice("there isn't a menu yet")
 </script>
 
-<TopAppBar on:nav={openMenu}>{appName}</TopAppBar>
+<OtherPage>
+	<!-- <TopAppBar on:nav={openMenu} bgColorIsVariant>{appName}</TopAppBar> -->
 
 <Page title="test page" layout="grid" >
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 		<Page.Subheader>This is a template for ui-components</Page.Subheader>
 		
-		<Progress.Linear indeterminate/>
+		<Progress.Linear value='.2'/>
 	
 		<p class='fs-12 gray'>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	</div>
@@ -71,5 +73,8 @@
 	</div>
 		
 	</Page>
+
+
+	</OtherPage>
 
 	<Snackbar/>
