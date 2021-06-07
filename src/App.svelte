@@ -8,6 +8,7 @@
 	let topics = ['topic1', 'topic2']
 	let checked = true
 	let appName = 'Demo App'
+	let toggle = true
 
 	onMount(() => {
 		//actions are for TopAppBar which Drawer uses.
@@ -28,7 +29,7 @@
 	const openMenu = () => setNotice("there isn't a menu yet")
 </script>
 
-<OtherPage>
+<OtherPage bind:toggle={toggle}>
 	<!-- <TopAppBar on:nav={openMenu} bgColorIsVariant>{appName}</TopAppBar> -->
 
 <Page title="test page" layout="grid" >
@@ -59,7 +60,8 @@
 			</Form>
 			
 			<span slot="actions">
-				<Button raised on:click={clickHandler}>imported button</Button>
+				<Button raised on:click={clickHandler}>add a chip</Button>
+				<Button raised on:click={() => toggle = !toggle}>open drawer</Button>
 				<Checkbox label='check this out' bind:checked={checked} uppercase/>
 			</span>
 		</Card>
