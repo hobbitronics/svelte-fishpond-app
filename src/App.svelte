@@ -29,7 +29,7 @@
 	const openMenu = () => setNotice("there isn't a menu yet")
 </script>
 
-<OtherPage bind:toggle={toggle}>
+<OtherPage bind:toggle>
 	<!-- <TopAppBar on:nav={openMenu} bgColorIsVariant>{appName}</TopAppBar> -->
 
 <Page title="test page" layout="grid" >

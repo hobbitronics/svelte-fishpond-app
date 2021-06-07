@@ -43,7 +43,7 @@
 </script>
 
 <body>
-  <Drawer {menuItems} bind:toggle={toggle} dismissible title="app">
+  <Drawer {menuItems} bind:toggle dismissible title="app">
     <span class="pointer" slot="header">
       <img class="w-100" src="/logo.png" alt="logo">
       <Button on:click={() => toggle = !toggle}>Toggle drawer</Button>
