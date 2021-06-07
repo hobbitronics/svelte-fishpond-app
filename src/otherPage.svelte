@@ -40,16 +40,14 @@
   })
 </script>
 
-<Drawer {menuItems} title="app">
-  <span class="pointer" slot="header">
-    <img class="w-100" src="/logo.png" alt="logo">
-  </span>
-
-  <Page title="title" layout="grid">
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-      <p>
-        Here is where you put your page content.
-      </p>
-    </div>
-  </Page>
-</Drawer>
+<body>
+  <Drawer {menuItems} title="app">
+    <span class="pointer" slot="header">
+      <img class="w-100" src="/logo.png" alt="logo">
+    </span>
+    
+    <Page title="title">
+      <slot/>
+    </Page>
+  </Drawer>
+</body>
