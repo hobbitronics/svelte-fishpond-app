@@ -1,5 +1,5 @@
 <script>
-  import { actions, Drawer, Page, Button } from 'ui-components'
+  import { actions, Drawer, Page, Button } from '@silintl/ui-components'
   import { onMount } from "svelte"
 
   export let toggle = true
