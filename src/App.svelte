@@ -43,14 +43,14 @@
 
 	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
 		
-		<Card>
+		<Card secondary="secondary text">
 			<p class="text-align-center">This is a card</p>
 
-			<Badge color="green">M</Badge>
+			<Badge bordered color="#FE1234">M</Badge>
 
 			<div class="flex justify-center flex-wrap">
 				{#each topics as topic}
-					<StaticChip>{topic}</StaticChip>
+					<StaticChip bgColor='yellow'>{topic}</StaticChip>
 				{/each}
 			</div>
 
