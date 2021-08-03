@@ -43,6 +43,7 @@
 </script>
 
 <body>
+  <!-- Drawer must be either modal or dismissible -->
   <Drawer {menuItems} bind:toggle dismissible title="app">
     <span class="pointer" slot="header">
       <img class="w-100" src="/logo.png" alt="logo">
