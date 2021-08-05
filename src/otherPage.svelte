@@ -15,18 +15,12 @@
     },
     {
       url: './',
-      label: 'see our components in storybook'
+      label: 'see'
     },
     {
       url: './',
-      label: 'see our components in storybook'
-    },
-    {
-      label: '--break--',
-    },
-    {
-      url: './',
-      label: 'see our components in storybook'
+      button: true,
+      label: 'item'
     }
   ]
 
@@ -44,11 +38,14 @@
 
 <body>
   <!-- Drawer must be either modal or dismissible -->
-  <Drawer {menuItems} bind:toggle dismissible title="app">
+  <Drawer class='auto-width' dismissible isFullHeight={false} {menuItems} bind:toggle title="app">
     <span class="pointer" slot="header">
       <img class="w-100" src="/logo.png" alt="logo">
       <Button on:click={() => toggle = !toggle}>Toggle drawer</Button>
     </span>
+
+    <Button slot="actions">end</Button>
+    <Button slot="TopAppBar">start</Button>
 
     <Page title="title">
       <slot/>
