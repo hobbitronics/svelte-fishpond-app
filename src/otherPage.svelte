@@ -8,6 +8,7 @@
     {},
     {
       url: './',
+      icon: 'add',
       label: 'see our components in storybook'
     },
     {
@@ -15,10 +16,12 @@
     },
     {
       url: './',
+      icon: 'add',
       label: 'see'
     },
     {
       url: './',
+      icon: 'add',
       button: true,
       label: 'item'
     }
@@ -38,7 +41,7 @@
 
 <body>
   <!-- Drawer must be either modal or dismissible -->
-  <Drawer class='auto-width' dismissible isFullHeight={false} {menuItems} bind:toggle title="app">
+  <Drawer modal hideForTablet miniMenu hasTopAppBar class='auto-width border-white' {menuItems} bind:toggle title="app">
     <span class="pointer" slot="header">
       <img class="w-100" src="/logo.png" alt="logo">
       <Button on:click={() => toggle = !toggle}>Toggle drawer</Button>
