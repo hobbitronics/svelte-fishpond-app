@@ -52,13 +52,9 @@ function uploadFile(file) {
   width: 480px;
   font-family: sans-serif;
   margin: 100px auto;
-  padding: 20px;
 }
 #drop-area.highlighted {
-  border-color: purple;
-}
-.my-form {
-  margin-bottom: 10px;
+  border-color: var(--mdc-theme-primary);
 }
 #gallery {
   margin-top: 10px;
@@ -75,12 +71,12 @@ function uploadFile(file) {
 
 </style>
 
-<div id="drop-area" bind:this={dropArea} class:highlighted
+<div id="drop-area" bind:this={dropArea} class="p-20px" class:highlighted
  on:dragenter|preventDefault|stopPropagation={highlight}
  on:dragleave|preventDefault|stopPropagation={unhighlight}
  on:dragover|preventDefault|stopPropagation={highlight}
  on:drop|preventDefault|stopPropagation={evt => handleDrop(evt) && unhighlight(evt)}>
-  <form class="my-form">
+  <form class="mb-10px">
     <p class="mt-0">Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
     <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
     <label class="mdc-button" for="fileElem" class:mdc-button--outlined={outlined} class:mdc-button--raised={raised} bind:this={button}>Select some files</label>
