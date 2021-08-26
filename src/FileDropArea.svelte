@@ -31,7 +31,6 @@ function uploadFile(file) {
   formData.append('file', file)
 
   dispatch('upload', formData)
-  console.log(formData.get('file'))
 }
 
 </script>
