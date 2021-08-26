@@ -1,10 +1,20 @@
 <script>
-import { createEventDispatcher } from "svelte"
+import { MDCRipple } from '@material/ripple'
+import { createEventDispatcher, onMount } from "svelte"
+
+export let raised = false
+export let outlined = false
 
 let dropArea = {}
+let button = {}
 let highlighted = false
 
 const dispatch = createEventDispatcher()
+
+onMount(() => {
+  const ripple = new MDCRipple(button)
+  return () => ripple.destroy()
+})
 
 function highlight() {
   highlighted = true
@@ -47,9 +57,6 @@ function uploadFile(file) {
 #drop-area.highlighted {
   border-color: purple;
 }
-p {
-  margin-top: 0;
-}
 .my-form {
   margin-bottom: 10px;
 }
@@ -61,17 +68,6 @@ p {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
-}
-.button {
-  display: inline-block;
-  padding: 10px;
-  background: #ccc;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.button:hover {
-  background: #ddd;
 }
 #fileElem {
   display: none;
@@ -85,8 +81,8 @@ p {
  on:dragover|preventDefault|stopPropagation={highlight}
  on:drop|preventDefault|stopPropagation={evt => handleDrop(evt) && unhighlight(evt)}>
   <form class="my-form">
-    <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+    <p class="mt-0">Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
     <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-    <label class="button" for="fileElem">Select some files</label>
+    <label class="mdc-button" for="fileElem" class:mdc-button--outlined={outlined} class:mdc-button--raised={raised} bind:this={button}>Select some files</label>
   </form>
 </div>
