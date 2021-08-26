@@ -3,6 +3,7 @@
 	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar, Progress } from '@silintl/ui-components'
 	import { onMount } from 'svelte'
 	import OtherPage from './otherPage.svelte'
+	import FileDropArea from './FileDropArea.svelte'
 
 	let text
 	let topics = ['topic1', 'topic2']
@@ -71,6 +72,8 @@
 			<CustomCard buttons={[{label: 'go to ui-components', url: "https://github.com/silinternational/ui-components#readme"}]} icon="face" title='Title goes here' alt='graphic' src="">
 				Add some text content here.
 			</CustomCard>
+
+			<FileDropArea on:upload={console.log}/>
 		</div>
 			
 		</Page>
