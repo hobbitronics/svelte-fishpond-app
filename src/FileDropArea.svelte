@@ -28,7 +28,9 @@ function handleDrop(e) {
 }
 
 function handleFiles(files) {
-  ([...files]).forEach(uploadFile)
+  files = [...files]
+  files.forEach(uploadFile)
+  files.forEach(previewFile)
 }
 
 function uploadFile(file) {
@@ -37,6 +39,17 @@ function uploadFile(file) {
   formData.append('file', file)
 
   dispatch('upload', formData)
+}
+
+function previewFile(file) {
+  const reader = new FileReader()
+  reader.readAsDataURL(file)
+  reader.onloadend = function() {
+    let img = document.createElement('img')
+    img.style = "width: -webkit-fill-available; margin-bottom: 10px ;margin-right: 10px;vertical-align: middle;"
+    img.src = reader.result
+    document.getElementById('gallery').appendChild(img)
+  }
 }
 
 </script>
@@ -51,15 +64,7 @@ function uploadFile(file) {
 #drop-area.highlighted {
   border-color: var(--mdc-theme-primary);
 }
-#gallery {
-  margin-top: 10px;
-}
-#gallery img {
-  width: 150px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
+
 #fileElem {
   display: none;
 }
@@ -82,4 +87,5 @@ form {
     <div>or drop files here</div>
     <i class="material-icons mdc-theme--primary" id="upload-icon">cloud_upload</i>
   </form>
+  <div id="gallery" class="mt-10px"></div>
 </div>
