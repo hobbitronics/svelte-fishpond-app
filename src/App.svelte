@@ -73,7 +73,7 @@
 				Add some text content here.
 			</CustomCard>
 
-			<FileDropArea raised on:upload={console.log}/>
+			<FileDropArea raised on:upload={e => console.log(e.detail.get('file'))}/>
 		</div>
 			
 		</Page>
