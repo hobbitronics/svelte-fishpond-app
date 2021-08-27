@@ -71,7 +71,7 @@ function uploadFile(file) {
 
 </style>
 
-<div id="drop-area" bind:this={dropArea} class="p-20px" class:highlighted
+<div id="drop-area" bind:this={dropArea} class="p-20px {$$props.class}" class:highlighted
  on:dragenter|preventDefault|stopPropagation={highlight}
  on:dragleave|preventDefault|stopPropagation={unhighlight}
  on:dragover|preventDefault|stopPropagation={highlight}
