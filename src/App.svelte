@@ -3,7 +3,7 @@
 	import { actions, Badge, Button, Card, Checkbox, Snackbar, setNotice, StaticChip, CustomCard, Form, Page, TextField, TopAppBar, Progress } from '@silintl/ui-components'
 	import { onMount } from 'svelte'
 	import OtherPage from './otherPage.svelte'
-	import FileDropArea from './FileDropArea.svelte'
+	import FileDropArea from './FileDropArea/index.svelte'
 
 	let text
 	let topics = ['topic1', 'topic2']

@@ -1,4 +1,5 @@
 <script>
+import './_index.scss'
 import { Progress } from "@silintl/ui-components"
 import { createEventDispatcher } from "svelte"
 
@@ -7,6 +8,7 @@ export let outlined = false
 export let uploading = false
 
 let fileInput = {}
+let button = {}
 
 let highlighted = false
 
@@ -80,6 +82,9 @@ form {
 .disabled {
   cursor: progress;
 }
+.icon {
+  color: hsla(213, 6%, 55%, 1);
+}
 
 </style>
 
@@ -92,9 +97,9 @@ form {
     {#if ! uploading}
       <input bind:this={fileInput} type="file" id="fileElem" multiple accept="application/pdf,image/*" disabled={uploading} on:change={() => handleFiles(fileInput.files)}>
     {/if}
-    <label class="mdc-button" for="fileElem" class:mdc-button--outlined={outlined} class:disabled={uploading} class:mdc-button--raised={raised}>Choose files</label>
+    <label class="mdc-button custom-text-button" for="fileElem" class:mdc-button--outlined={outlined} class:disabled={uploading} class:mdc-button--raised={raised}>Choose files</label>
     <div>or drop files here</div>
-    <i class="material-icons mdc-theme--primary" id="upload-icon">cloud_upload</i>
+    <i class="material-icons icon" id="upload-icon">cloud_upload</i>
   </form>
   <div id="gallery" class="mt-10px"></div>
   {#if uploading}
