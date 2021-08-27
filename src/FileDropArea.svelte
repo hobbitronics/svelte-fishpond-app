@@ -64,7 +64,6 @@ function previewFile(file) {
   border: 2px dashed #ccc;
   border-radius: 20px;
   font-family: sans-serif;
-  margin: 0 auto;
 }
 #drop-area.highlighted {
   border-color: var(--mdc-theme-primary);

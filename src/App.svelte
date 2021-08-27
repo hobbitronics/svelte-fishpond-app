@@ -73,7 +73,7 @@
 				Add some text content here.
 			</CustomCard>
 
-			<FileDropArea raised on:upload={e => console.log(e.detail.get('file'))}/>
+			<FileDropArea class="py-4 my-4" raised on:upload={e => console.log(e.detail.get('file'))}/>
 		</div>
 			
 		</Page>
