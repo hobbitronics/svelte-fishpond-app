@@ -10,9 +10,9 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
-    "@silintl/ui-components": "^6.0.1",
+    "@silintl/ui-components": "^6.6.0",
     "material-components-web": "^13.0.0",
-    "rollup": "^2.47.0",
+    "rollup": "^2.79.1",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
@@ -21,6 +21,6 @@
     "sass": "1.50.x",
     "sirv-cli": "^1.0.11",
     "svelte": "^3.48.0",
-    "svelte-preprocess": "^4.10.6"
+    "svelte-preprocess": "^4.10.7"
   }
 }
