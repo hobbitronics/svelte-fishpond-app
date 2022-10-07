@@ -1,5 +1,6 @@
 <script>
   import './mdc/_index.scss'
+  import OtherPage from './otherPage.svelte'
   import {
     actions,
     Badge,
@@ -11,6 +12,7 @@
     StaticChip,
     CustomCard,
     Form,
+    FileDropArea,
     Page,
     TextField,
     TopAppBar,
@@ -18,8 +20,6 @@
     Menu,
   } from '@silintl/ui-components'
   import { onMount } from 'svelte'
-  import OtherPage from './otherPage.svelte'
-  import FileDropArea from './FileDropArea'
 
   let text
   let topics = ['topic1', 'topic2']
